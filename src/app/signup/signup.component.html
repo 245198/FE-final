@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+      <form #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm)">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" ngModel class="form-control" id="userFirstName" name="userFirstName" placeholder="Enter first name" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" ngModel class="form-control" id="userLastName" name="userLastName" placeholder="Enter last name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" ngModel class="form-control" id="userName" name="userName" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" ngModel class="form-control" id="userPassword" name="userPassword" placeholder="Enter password" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" [disabled]="!signUpForm.valid || isSubmitting" value="Register" class="btn btn-outline-primary form-control">
+        </div>
+      </form>
+          
+    </div>
+</div>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoviePix</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    .rating {
+      direction: rtl;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-3">
+        <img class="card-img-top" style=" width: 310px; height: 430px;" src="assets/OIP (1).jpg"
+          alt="Movie Poster">
+      </div>
+      <div class="col-xl-9">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="card-title">Movie Name : <b>JAWAN</b></h5>
+                <p class="card-text">Description : Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                  Consequuntur maxime praesentium eveniet ipsam a. Ipsam earum totam velit nam, dolore impedit ipsum, 
+                  voluptas vel inventore tempora quidem reprehenderit ratione iste. Lorem ipsum dolor sit amet consectetur 
+                  adipisicing elit. Quasi dicta asperiores vel minus reprehenderit ullam nesciunt voluptatem iste voluptas saepe veniam consequatur eos incidunt cumque omnis nam, corrupti nostrum optio?</p>
+                <p class="card-text">Director</p>
+                <p class="card-text">Duration</p>
+                <p class="card-text">Genre</p>
+                <p class="card-text">Language</p>
+                
+              </div>
+
+              <div class="col-12">
+                <h6 class="card-subtitle mt-4">Rate the Movie:</h6>
+                <div class="rating">
+                  <input type="radio" [(ngModel)]="starRating" id="star10" name="rating" value="10" />
+                  <label for="star10"></label>
+                  <input type="radio" [(ngModel)]="starRating" id="star9" name="rating" value="9" />
+                  <label for="star9"></label>
+                  <input type="radio" [(ngModel)]="starRating" id="star8" name="rating" value="8" />
+                  <label for="star8"></label>
+                  <input type="radio" [(ngModel)]="starRating" id="star7" name="rating" value="7" />
+                  <label for="star7"></label>
+                  <input type="radio" [(ngModel)]="starRating" id="star6" name="rating" value="6" />
+                  <label for="star6"></label>
+                  <input type="radio" [(ngModel)]="starRating" id="star5" name="rating" value="5" />
+                  <label for="star5"></label>
+                  <input type="radio" [(ngModel)]="starRating" id="star4" name="rating" value="4" />
+                  <label for="star4"></label>
+                  <input type="radio" [(ngModel)]="starRating" id="star3" name="rating" value="3" />
+                  <label for="star3"></label>
+                  <input type="radio" [(ngModel)]="starRating" id="star2" name="rating" value="2" />
+                  <label for="star2"></label>
+                  <input type="radio" [(ngModel)]="starRating" id="star1" name="rating" value="1" />
+                  <label for="star1"></label>
+                  <!-- Add more rating options if desired -->
+                </div>
+                <p id="ratingValue"></p>
+              </div>
+
+              <div class="col-12">
+                <h6 class="card-subtitle mt-4">Post a Review:</h6>
+                <textarea class="form-control" style="background-color: rgba(0, 0, 0, 0.112); color: white;" [(ngModel)]="reviewmessage" rows="4"></textarea>
+                <button class="btn btn-primary mt-2" (click)="submitreview()">Submit Review</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function submitreview(){
+    var ratingInputs = document.querySelectorAll('.rating input');
+    var ratingValue = document.getElementById('ratingValue');
+
+    ratingInputs.forEach(function (input) {
+      input.addEventListener('change', function () {
+        var selectedRating = this.value;
+        ratingValue.textContent = 'Your Rating: ' + selectedRating + '/10';
+      });
+    });
+  }
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256–2z0P7MLoyxByUtvAk/xjkmindefS4auh4Pfzbm7y6g0="
+    crossorigin=”anonymous”>
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

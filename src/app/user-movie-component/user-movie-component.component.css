@@ -1,0 +1,103 @@
+
+
+.card {
+  background: transparent;
+  border: none;
+  color: rgb(255, 255, 255);
+}
+
+.card-img-top {
+  margin-top: 20px;
+  width: 400px;
+  height: 400px;
+}
+
+
+.card-body{
+  margin-left: 50px;
+}
+
+.rating {
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.rating input {
+  position: absolute;
+  left: -9999px;
+}
+
+.rating label {
+  display: inline-block;
+  font-size: 24px;
+  color: #ccc;
+  margin-right: 5px;
+}
+
+.rating label:before {
+  content: '\2605'; /* Star icon */
+}
+
+.rating input:checked ~ label {
+  color: #ffd700; /* Gold color */
+}
+
+#displayRating {
+  font-size: 24px;
+  margin-top: 10px;
+}
+.user-reviews {
+  margin-top: 20px;
+}
+
+.user-review {
+  margin-bottom: 10px;
+}
+
+.read-more {
+  display: none;
+  margin-top: 10px;
+}
+
+.show-more-reviews {
+  display: none;
+  margin-top: 10px;
+}
+body{
+  background-image: url('src/assets/background poster-modified.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: inherit;
+  filter: blur(8px); /* Adjust the blur intensity as desired */
+  z-index: -1;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.03);
+  border: none;
+  box-shadow: black;
+}
+
+.container{
+  margin-top: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 70px;
+  background-color: rgba(0, 0, 0, 0.454);
+  border-radius: 10px;
+}
